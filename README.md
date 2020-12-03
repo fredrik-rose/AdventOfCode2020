@@ -19,3 +19,7 @@ match.group(4)
 ```
 
 It is possible to use named groups (`(?P<name>)`) and `.groupdict()` to convert to a dictionary directly.
+
+## Numpy
+
+May overflow if using too small data types, Python's int will not overflow.
