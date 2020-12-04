@@ -5,6 +5,14 @@ puzzles can be found here: https://adventofcode.com/2020
 
 ## Lessons Learned
 
+### Python
+
+Create a dict from a list of pairs:
+```
+>>> dict([['a', 1], ['b', 2]])
+{'b': 2, 'a': 1}
+```
+
 ### Regexp
 
 Extract parts from string, `()` defines a "part":
