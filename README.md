@@ -13,6 +13,11 @@ Create a dict from a list of pairs:
 {'b': 2, 'a': 1}
 ```
 
+Parse a binary string to int:
+```
+int(binary_string, 2)
+```
+
 ### Regexp
 
 Extract parts from string, `()` defines a "part":
