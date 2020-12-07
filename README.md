@@ -5,6 +5,10 @@ puzzles can be found here: https://adventofcode.com/2020
 
 ## Lessons Learned
 
+### Algorithms
+
+Consider which way to "map" things, e.g. in a directed graph. Reversing the directions may be a good idea.
+
 ### Python
 
 Create a dict from a list of pairs:
@@ -48,6 +52,8 @@ match.group(4)
 ```
 
 It is possible to use named groups (`(?P<name>)`) and `.groupdict()` to convert to a dictionary directly.
+
+Use `re.findall()` to get a list of all matches, works also for group patterns.
 
 ## Numpy
 
