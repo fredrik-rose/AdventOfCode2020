@@ -31,6 +31,11 @@ my_list = [1, 2, 3, 4]
 fun(*my_list)
 ```
 
+Get (and call) an attribute (e.g a function from an object):
+```
+getattr(MyClass, 'my_func')(arg)
+```
+
 `itertools.chain(*iterables)`: make an iterator that returns elements from the first iterable until it is exhausted,
 then proceeds to the next iterable, until all of the iterables are exhausted.
 ```
