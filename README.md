@@ -63,3 +63,11 @@ Use `re.findall()` to get a list of all matches, works also for group patterns.
 ## Numpy
 
 May overflow if using too small data types, Python's int will not overflow.
+
+## itertools
+
+May be really useful.
+```
+def contains_sum_of_two(numbers, target):
+    return any(x + y == target for x, y in itertools.combinations(numbers, 2))
+```
