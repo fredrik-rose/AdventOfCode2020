@@ -11,6 +11,8 @@ Consider which way to "map" things, e.g. in a directed graph. Reversing the dire
 
 Dynamic programming is an important algorithm.
 
+Complex numbers can be really nice for 2D coordinate systems, especially in cases with simple rotations.
+
 ### Python
 
 Create a dict from a list of pairs:
@@ -43,6 +45,11 @@ then proceeds to the next iterable, until all of the iterables are exhausted.
 ```
 >>> list(itertools.chain('ABC', 'DEF'))
 ['A', 'B', 'C', 'D', 'E', 'F']
+```
+
+Be careful with simultaneous updates, Python has support for this. Example of rotation:
+```
+x, y = x*cos_a - y*sin_a, x*sin_a + y*cos_a
 ```
 
 ### Regexp
