@@ -1,5 +1,4 @@
 # Day 12: Rain Risk
-import math
 
 
 def parse_input(file_path):
@@ -13,58 +12,49 @@ def parse_instruction(instruction):
 
 
 def get_actions_from_instructions(instructions):
-    translator = {'N': lambda x: ('Translation', (0, x)),
-                  'S': lambda x: ('Translation', (0, -x)),
-                  'E': lambda x: ('Translation', (x, 0)),
-                  'W': lambda x: ('Translation', (-x, 0)),
-                  'L': lambda x: ('Rotation', x),
-                  'R': lambda x: ('Rotation', -x),
+    translator = {'N': lambda x: ('Translation', +x * 1j),
+                  'S': lambda x: ('Translation', -x * 1j),
+                  'E': lambda x: ('Translation', +x),
+                  'W': lambda x: ('Translation', -x),
+                  'L': lambda x: ('Rotation', 1j ** (+x // 90)),
+                  'R': lambda x: ('Rotation', 1j ** (-x // 90)),
                   'F': lambda x: ('Forward', x)}
     actions = [translator[operation](operand) for operation, operand in instructions]
     return actions
 
 
 def part_one(actions):
-    angle = 0
-    x, y = 0, 0
+    position = 0 + 0j
+    angle = 1 + 0j
     for action, delta in actions:
         if action == 'Translation':
-            x += delta[0]
-            y += delta[1]
+            position += delta
         elif action == 'Rotation':
-            assert abs(delta) in (0, 90, 180, 270)
-            angle += math.radians(delta)
+            angle *= delta
         elif action == 'Forward':
-            x += round(math.cos(angle)) * delta
-            y += round(math.sin(angle)) * delta
+            position = position + angle * delta
         else:
             assert False  # Invalid action.
-    print("Manhattan distance part one: {}".format(manhattan_distance(x, y)))
+    print("Manhattan distance part one: {}".format(manhattan_distance(position)))
 
 
-def manhattan_distance(x, y):
-    return abs(x) + abs(y)
+def manhattan_distance(position):
+    return round(abs(position.real) + abs(position.imag))
 
 
 def part_two(actions):
-    x, y = 0, 0
-    wx, wy = 10, 1
+    boat = 0 + 0j
+    waypoint = 10 + 1j
     for action, delta in actions:
         if action == 'Translation':
-            wx += delta[0]
-            wy += delta[1]
+            waypoint += delta
         elif action == 'Rotation':
-            assert abs(delta) in (0, 90, 180, 270)
-            radians = math.radians(delta)
-            cos_a = round(math.cos(radians))
-            sin_a = round(math.sin(radians))
-            wx, wy = wx*cos_a - wy*sin_a, wx*sin_a + wy*cos_a
+            waypoint *= delta
         elif action == 'Forward':
-            x += wx * delta
-            y += wy * delta
+            boat += waypoint * delta
         else:
             assert False  # Invalid action.
-    print("Manhattan distance part two: {}".format(manhattan_distance(x, y)))
+    print("Manhattan distance part two: {}".format(manhattan_distance(boat)))
 
 
 def main():
