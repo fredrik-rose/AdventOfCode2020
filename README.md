@@ -13,6 +13,9 @@ Dynamic programming is an important algorithm.
 
 Complex numbers can be really nice for 2D coordinate systems, especially in cases with simple rotations.
 
+There may be a math trick that makes the problem easy to solve, like modular inverse, greatest common multiple and
+the Chinese remainder theorem.
+
 ### Python
 
 Create a dict from a list of pairs:
