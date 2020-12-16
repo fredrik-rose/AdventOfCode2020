@@ -55,6 +55,13 @@ Be careful with simultaneous updates, Python has support for this. Example of ro
 x, y = x*cos_a - y*sin_a, x*sin_a + y*cos_a
 ```
 
+Be careful when iterating over sets as the values can come in any order.
+
+Get indexes of the sorted list (argsort):
+```
+[e[0] for e in sorted(enumerate(my_list), key=lambda x: x[1])]
+```
+
 ### Regexp
 
 Extract parts from string, `()` defines a "part":
