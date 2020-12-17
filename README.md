@@ -16,6 +16,9 @@ Complex numbers can be really nice for 2D coordinate systems, especially in case
 There may be a math trick that makes the problem easy to solve, like modular inverse, greatest common multiple and
 the Chinese remainder theorem.
 
+An alternative to create a data structure for multi-dimensional data is to just keep a set of the coordinates. For
+example, a 3D cube with two possible values could be represented as a set of coordinates for one of the values.
+
 ### Python
 
 Create a dict from a list of pairs:
