@@ -19,6 +19,13 @@ the Chinese remainder theorem.
 An alternative to create a data structure for multi-dimensional data is to just keep a set of the coordinates. For
 example, a 3D cube with two possible values could be represented as a set of coordinates for one of the values.
 
+The Shunting-yard algorithm is nice for parsing and evaluating simple math expressions. Note that it is possible to
+adjust the algorithm to also perform the calculations. To do this, each time an operator is popped from the operator
+stack, pop two operands from the operand stack and apply the operand to these values. Push the result to the operand
+stack. See day 18.
+
+The tools lex/yacc can be nice for "compiler/parsing" problems. A recursive descent parser can also be used.
+
 ### Python
 
 Create a dict from a list of pairs:
@@ -65,6 +72,11 @@ Get indexes of the sorted list (argsort):
 [e[0] for e in sorted(enumerate(my_list), key=lambda x: x[1])]
 ```
 
+A hack for operator precedence problems is to create a class that overloads operators (e.g. +, - @, ...) and then
+search and replace operators with an operator with correct precedence. The overloaded operator makes sure that the
+correct operation is performed. Then just simply replace each number with `MyClass(number)` and use the `eval()`
+function to compute the result. See day 18 (the hack version).
+
 ### Regexp
 
 Extract parts from string, `()` defines a "part":
@@ -81,6 +93,14 @@ match.group(4)
 It is possible to use named groups (`(?P<name>)`) and `.groupdict()` to convert to a dictionary directly.
 
 Use `re.findall()` to get a list of all matches, works also for group patterns.
+
+Search and replace:
+```
+re.sub(r'(\d+)', r'MyClass(\1)', string)
+```
+
+The Python documentation has a nice tokenizer example:
+https://docs.python.org/3/library/re.html#writing-a-tokenizer
 
 ## Numpy
 
