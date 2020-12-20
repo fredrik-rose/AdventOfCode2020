@@ -102,6 +102,8 @@ re.sub(r'(\d+)', r'MyClass(\1)', string)
 The Python documentation has a nice tokenizer example:
 https://docs.python.org/3/library/re.html#writing-a-tokenizer
 
+Regexp does not have support for patterns like `a+b+` where the numbers of `a`s and `b`s must match.
+
 ## Numpy
 
 May overflow if using too small data types, Python's int will not overflow.
