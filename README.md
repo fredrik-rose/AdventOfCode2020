@@ -7,7 +7,12 @@ puzzles can be found here: https://adventofcode.com/2020
 
 ### Algorithms
 
-Consider which way to "map" things, e.g. in a directed graph. Reversing the directions may be a good idea.
+Consider which way to "map" things, e.g. in a directed graph. Reversing the directions may be a good idea. An other
+idea is to represent a graph as edges containing connected nodes (instead of nodes with connected nodes).
+```
+graph = {edgeA: [nodeA, nodeB], edgeB: [nodeB]}
+graph = {nodeA: [nodeB, nodeC], nodeB: [nodeA], nodeC: [nodeA]}
+```
 
 Dynamic programming is an important algorithm.
 
