@@ -53,6 +53,11 @@ my_list = [1, 2, 3, 4]
 fun(*my_list)
 ```
 
+Create set from list of lists:
+```
+set().union(*my_list_of_lists)
+```
+
 Get (and call) an attribute (e.g a function from an object):
 ```
 getattr(MyClass, 'my_func')(arg)
