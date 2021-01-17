@@ -44,6 +44,8 @@ my_list = list(range(10))
 linked_list = {node: next_node for node, next_node in zip(my_list, my_list[1:] + [None])}
 ```
 
+There are nice coordinate systems to be used for hex grids, see https://www.redblobgames.com/grids/hexagons/
+
 ### Python
 
 Create a dict from a list of pairs:
