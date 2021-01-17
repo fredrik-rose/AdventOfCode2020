@@ -46,6 +46,8 @@ linked_list = {node: next_node for node, next_node in zip(my_list, my_list[1:] +
 
 There are nice coordinate systems to be used for hex grids, see https://www.redblobgames.com/grids/hexagons/
 
+The Pohlig-Hellman algorithm can solve `y = g^x mod p`.
+
 ### Python
 
 Create a dict from a list of pairs:
@@ -96,6 +98,8 @@ Get indexes of the sorted list (argsort):
 ```
 [e[0] for e in sorted(enumerate(my_list), key=lambda x: x[1])]
 ```
+
+Python's `pow()` has support for `x^y % n`.
 
 A hack for operator precedence problems is to create a class that overloads operators (e.g. +, - @, ...) and then
 search and replace operators with an operator with correct precedence. The overloaded operator makes sure that the
