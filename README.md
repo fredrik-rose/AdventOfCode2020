@@ -31,6 +31,19 @@ stack. See day 18.
 
 The tools lex/yacc can be nice for "compiler/parsing" problems. A recursive descent parser can also be used.
 
+You don't always have to find a clever math solution like finding an equation or pattern for problems with
+many iteration and/or much data. A change of data structure may be enough. For example, iterating ten
+million times on one million elements is possible of the operations performed each operation are `O(1)`,
+but not if they are `O(N)`.
+
+A linked list and a hash map with references to the nodes in the list may be a useful data structure. Then it is
+possible to find and re-arrange elements in `O(1)`. For a list of integers, a really simple implementation is to
+use a hash map with keys being the nodes and values being the next node:
+```
+my_list = list(range(10))
+linked_list = {node: next_node for node, next_node in zip(my_list, my_list[1:] + [None])}
+```
+
 ### Python
 
 Create a dict from a list of pairs:
